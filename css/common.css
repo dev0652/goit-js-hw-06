@@ -23,6 +23,18 @@ button {
   cursor: pointer;
 }
 
+div#counter {
+  display: flex;
+  align-items:center;
+  gap: 0.7rem;
+}
+
+#value {
+  font-size: 3rem;
+  font-weight: 600;
+  transform: translateY(-3px);
+}
+
 .gallery {
   list-style: none;
   padding-inline-start: 0px;
