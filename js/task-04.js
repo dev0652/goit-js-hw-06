@@ -1,16 +1,19 @@
+const incBtnEl = document.querySelector('[data-action="increment"]');
+const decrBtnEl = document.querySelector('[data-action="decrement"]');
+decrBtnEl.disabled = true;
+
 let counterValue = 0;
 
-const incrementEl = document.querySelector('[data-action="increment"]');
-const decrementEl = document.querySelector('[data-action="decrement"]');
-
-incrementEl.addEventListener('click', () => {
+incBtnEl.addEventListener('click', () => {
   counterValue += 1;
   value.textContent = counterValue;
+  decrBtnEl.disabled = false;
 });
 
-decrementEl.addEventListener('click', () => {
-  if (value.textContent > 0) {
-    counterValue -= 1;
-    value.textContent = counterValue;
+decrBtnEl.addEventListener('click', () => {
+  counterValue -= 1;
+  value.textContent = counterValue;
+  if (counterValue < 1) {
+    decrBtnEl.disabled = true;
   }
 });
